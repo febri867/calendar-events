@@ -1,0 +1,20 @@
+$size: 0;
+@while $size <= 100 {
+  .m--#{$size} {
+    margin: #{$size}px !important;
+  }
+  .m__l--#{$size} {
+    margin-left: #{$size}px !important;
+  }
+  .m__r--#{$size} {
+    margin-right: #{$size}px !important;
+  }
+  .m__t--#{$size} {
+    margin-top: #{$size}px !important;
+  }
+  .m__b--#{$size} {
+    margin-bottom: #{$size}px !important;
+  }
+
+  $size: $size + 5;
+}

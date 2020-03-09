@@ -1,0 +1,10 @@
+@mixin color($colorVal, $name) {
+  .c--#{$name} {
+    color: $colorVal !important;
+  }
+}
+
+// colors
+@each $name, $colorVal in $colors {
+  @include color($colorVal, $name);
+}

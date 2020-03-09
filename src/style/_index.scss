@@ -1,0 +1,27 @@
+@import './_init.scss';
+
+body {
+  font-family: 'Ubuntu-Bold';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  height: 100vh;
+}
+
+.header{
+  max-width: 100%;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.2);
+  margin-bottom: 50px !important;
+}
+
+.brand{
+  height: 100%;
+  width: fit-content;
+  display: inline-block;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.2);
+}
+
+.box-container {
+  position: relative;
+  width: 100vw;
+  white-space: nowrap;
+}

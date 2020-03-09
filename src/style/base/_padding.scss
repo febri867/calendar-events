@@ -1,0 +1,20 @@
+$i: 0;
+@while $i <= 100 {
+    .p--#{$i} {
+        padding: #{$i}px;
+    }
+    .p__r--#{$i}{
+        padding-right: #{$i}px;
+    }
+    .p__l--#{$i}{
+        padding-left: #{$i}px;
+    }
+    .p__t--#{$i}{
+        padding-top: #{$i}px;
+    }
+    .p__b--#{$i}{
+        padding-bottom: #{$i}px;
+    }
+
+    $i: $i + 5;
+}

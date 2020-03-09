@@ -1,0 +1,5 @@
+@each $key, $color in $colors {
+  &.bc--#{$key}{
+    background-color: $color !important;
+  }
+}

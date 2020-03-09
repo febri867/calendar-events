@@ -1,0 +1,109 @@
+///**
+//* TYPOGRAPHY
+//*/
+
+//list fontface
+$font-family: (
+        Ubuntu: 'Ubuntu',
+        Ubuntu-Bold: 'Ubuntu-Bold',
+        Ubuntu-Bold-Italic: 'Ubuntu-Bold-Italic',
+        Ubuntu-Condose: 'Ubuntu-Condose',
+        Ubuntu-Italic: 'Ubuntu-Italic',
+        Ubuntu-Light: 'Ubuntu-Light',
+        Ubuntu-Light-Italic: 'Ubuntu-Light-Italic',
+        Ubuntu-Medium: 'Ubuntu-Medium',
+        Ubuntu-Medium-Italic: 'Ubuntu-Medium-Italic',
+        Ubuntu-Thin: 'Ubuntu-Thin',
+        UbuntuMono: 'UbuntuMono',
+        UbuntuMono-Italic: 'UbuntuMono-Italic',
+        UbuntuMono-Bold: 'UbuntuMono-Bold',
+        UbuntuMono-Bold-Italic: 'UbuntuMono-Bold-Italic');
+
+//mixin @font-face link
+@mixin font-face-ubuntu($type, $name) {
+  @font-face {
+    font-family: $name;
+    src: url('../font/#{$type}.ttf') format('truetype');
+    font-style: normal;
+  }
+}
+
+//create each font-family
+@each $type, $name in $font-family {
+  @include font-face-ubuntu($type, $name);
+}
+
+//default for header
+@mixin font-header($line-height){
+  font-family: 'Ubuntu-Bold';
+  line-height: $line-height;
+}
+
+//default for paragraph, label and sidebar
+@mixin font-content($line-height){
+  font-family: 'Ubuntu-Bold';
+  line-height: $line-height;
+}
+
+p {
+  @include font-content(18px);
+  font-size: 12px;
+}
+label {
+  @include font-content(18px);
+  font-size: 12px;
+  margin-bottom: 5px;
+}
+
+//default for button tag
+button {
+  font-family: 'Ubuntu-Bold';
+  line-height: 20px;
+  font-size: 14px;
+}
+
+// choose text-tarnsform with class
+.uppercase {
+  text-transform: uppercase !important;
+}
+.lowercase {
+  text-transform: lowercase !important;
+}
+.capitalize {
+  text-transform: capitalize !important;
+}
+.italic {
+  font-style: italic !important;
+}
+.bold {
+  font-weight: bold !important;
+}
+.underline {
+  text-decoration: underline !important;
+}
+.line-through {
+  text-decoration: line-through !important;
+}
+
+$font-type: (
+        ubuntu: 'Ubuntu',
+        ubuntu__bold: 'Ubuntu-Bold',
+        ubuntu__bold-italic: 'Ubuntu-Bold-Italic',
+        ubuntu__condose: 'Ubuntu-Condose',
+        ubuntu__italic: 'Ubuntu-Italic',
+        ubuntu__light: 'Ubuntu-Light',
+        ubuntu__light-italic: 'Ubuntu-Light-Italic',
+        ubuntu__medium: 'Ubuntu-Medium',
+        ubuntu__medium-italic: 'Ubuntu-Medium-Italic',
+        ubuntu__thin: 'Ubuntu-Thin',
+        ubuntu__mono: 'UbuntuMono',
+        ubuntu__mono-bold: 'UbuntuMono-Bold',
+        ubuntu__mono-bold-italic: 'UbuntuMono-Bold-Italic',
+        ubuntu__mono-italic: 'UbuntuMono-Italic',
+);
+
+@each $key, $font in $font-type {
+  &.f--#{$key}{
+    font-family : $font;
+  }
+}
